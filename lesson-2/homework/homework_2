@@ -1,1 +1,37 @@
+Power BI Data Import and Source Management Q&A
+List three data sources Power BI can connect to.
+1. SQL Server
+2. Excel
+3. SharePoint
+What is the first step to import data into Power BI Desktop?
+Click on 'Home' > 'Get Data' and select the data source.
+How do you refresh imported data in Power BI?
+Click on 'Home' > 'Refresh' or set up scheduled refresh in Power BI Service.
+What file formats can Power BI import directly? (Name two.)
+1. CSV
+2. Excel (.xlsx)
+What does the 'Navigator' window show after selecting a data source?
+It displays available tables/sheets and a preview of the data.
+Import Sales_Data.csv and load only the 'Product' and 'Price' columns.
+Use Power Query: Uncheck all other columns and keep only 'Product' and 'Price'.
+How would you change OrderDate to a date format during import?
+In Power Query, select 'OrderDate' column > 'Transform' tab > 'Data Type' > 'Date'.
+What is the difference between 'Load' and 'Transform Data' in the import dialog?
+'Load' imports the data as-is. 'Transform Data' opens Power Query Editor to shape/clean the data first.
+Why might you see an error when connecting to a SQL database? (Name one reason.)
+Incorrect server/database credentials or lack of network access to the database server.
+How do you replace a data source after importing it?
+Go to 'Home' > 'Transform Data' > 'Data source settings' and click 'Change Source'.
+Write the M-code to import only rows where Quantity > 1.
+```m
+= Table.SelectRows(Source, each [Quantity] > 1)
+```
+How would you change the data source if Sales_Data.csv changed?
+Go to 'Home' > 'Transform Data' > 'Data source settings' > 'Change Source' and browse to the new CSV file.
+Troubleshoot: Your CSV import fails due to a 'mixed data type' error—how do you fix it?
+In Power Query, manually set the column data types to ensure consistency (e.g., change to 'Text' or 'Number').
+Connect to a live SQL database with parameters (e.g., filter by year).
+Use Power Query parameters. Define a parameter for year, use it in your SQL query or table filter.
+How would you automate data imports using Power BI and Power Automate?
+Create a Power Automate flow that triggers a dataset refresh in Power BI on a schedule or event.
 
